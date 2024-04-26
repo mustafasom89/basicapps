@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.css";
 
 function App() {
   const [firstName, setFirstName] = useState("");
@@ -13,26 +14,28 @@ function App() {
   };
 
   const handleSend = () => {
-    // Perform your desired action with the first name and mobile number
-    console.log(`First Name: ${firstName}`);
-    console.log(`Mobile: ${mobile}`);
+    alert(`First Name: ${firstName}\nMobile: ${mobile}`);
   };
 
   return (
-    <div>
+    <div className="container">
       <input
         type="text"
         placeholder="First Name"
         value={firstName}
         onChange={handleFirstNameChange}
+        className="input-field"
       />
       <input
         type="text"
         placeholder="Mobile"
         value={mobile}
         onChange={handleMobileChange}
+        className="input-field"
       />
-      <button onClick={handleSend}>Send</button>
+      <button onClick={handleSend} className="send-button">
+        Send
+      </button>
     </div>
   );
 }
